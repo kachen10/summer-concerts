@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Summer Concerts</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+  </head>
+  <body>
+    <ul>
+      <li>
+        <span class="date">June 21</span>
+        <span class="artist">together PANGEA</span>
+        <span class="price">$22.46</span>
+        <span class="likes">0</span>
+        <button 
+          id="button" 
+          onclick="liked(this.id)" 
+          class="upvote"><i class="material-icons">arrow_upward</i>
+        </button>
+      </li>
+      <li>
+        <span class="date">July 6</span>
+        <span class="artist">Khatsalano Street Party</span>
+        <span class="price">FREE</span>
+        <span class="likes">0</span>
+        <button 
+          id="button" 
+          onclick="liked(this.id)" 
+          class="upvote"><i class="material-icons">arrow_upward</i>
+        </button>
+      </li>
+      <li>
+        <span class="date">July 26-28</span>
+        <span class="artist">Squamish Constelation Fest</span>
+        <span class="price">$65-$199</span>
+        <span class="likes">0</span>
+        <button 
+          id="button" 
+          onclick="liked(this.id)" 
+          class="upvote"><i class="material-icons">arrow_upward</i>
+        </button>
+      </li>
+      <li>
+        <span class="date">July 20</span>
+        <span class="artist">Cuco</span>
+        <span class="price">$37.70</span>
+        <span class="likes">0</span>
+        <button 
+          id="button" 
+          onclick="liked(this.id)" 
+          class="upvote"><i class="material-icons">arrow_upward</i>
+        </button>
+      </li>
+    </ul>
+
+  </body>
+</html>
