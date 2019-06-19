@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Summer Concerts</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link href="datedropper.css" rel="stylesheet" />
+    <link href="Main.css" rel="stylesheet" />
+    <link href="my-style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="datedropper.js"></script>
     <script src="app.js"></script>
+    
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/6.2.0/firebase-app.js"></script>
@@ -24,52 +28,62 @@
 
   </head>
   <body>
-    <ul>
-      <li>
-        <span class="date">June 21</span>
-        <span class="artist">together PANGEA</span>
-        <span class="price">$22.46</span>
-        <span class="likes">0</span>
-        <button 
-          id="button" 
-          onclick="liked(this.id)" 
-          class="upvote"><i class="material-icons">arrow_upward</i>
-        </button>
-      </li>
-      <li>
-        <span class="date">July 6</span>
-        <span class="artist">Khatsalano Street Party</span>
-        <span class="price">FREE</span>
-        <span class="likes">0</span>
-        <button 
-          id="button" 
-          onclick="liked(this.id)" 
-          class="upvote"><i class="material-icons">arrow_upward</i>
-        </button>
-      </li>
-      <li>
-        <span class="date">July 26-28</span>
-        <span class="artist">Squamish Constelation Fest</span>
-        <span class="price">$65-$199</span>
-        <span class="likes">0</span>
-        <button 
-          id="button" 
-          onclick="liked(this.id)" 
-          class="upvote"><i class="material-icons">arrow_upward</i>
-        </button>
-      </li>
-      <li>
-        <span class="date">July 20</span>
-        <span class="artist">Cuco</span>
-        <span class="price">$37.70</span>
-        <span class="likes">0</span>
-        <button 
-          id="button" 
-          onclick="liked(this.id)" 
-          class="upvote"><i class="material-icons">arrow_upward</i>
-        </button>
-      </li>
-    </ul>
-
+    <div class="form">
+      <input id="date" type="text" data-large-mode="true" data-dd-lock="from" data-theme="my-style" data-dd-format="d-m"/>
+      <input id="concert-name" type="text" autocomplete="off" required />
+      <label for="conert-name" class="label-concert-name">
+        <span class="content-name"></span>
+      </label>
+      <input id="price" type="text" autocomplete="off" required />
+      <button type="submit" onclick="addNewConcert()">Submit</button>
+    </div>
+    <!-- <div class="datepicker">
+      <input id="date" type="text" data-large-mode="true" data-large-default="true" data-dd-lock="from" data-translate-mode="true"
+        data-theme="my-style" />
+    </div> -->
+    
+    
+    <div class="list">
+      <ul id="concerts-list">
+        <li>
+          <span class="date">June 21</span>
+          <span class="artist">together PANGEA</span>
+          <span class="price">$22.46</span>
+          <span class="likes">0</span>
+          <button id="button" onclick="liked(this.id)" class="upvote"><i class="material-icons">arrow_upward</i>
+          </button>
+        </li>
+        <li>
+          <span class="date">July 6</span>
+          <span class="artist">Khatsalano Street Party</span>
+          <span class="price">FREE</span>
+          <span class="likes">0</span>
+          <button id="button" onclick="liked(this.id)" class="upvote"><i class="material-icons">arrow_upward</i>
+          </button>
+        </li>
+        <li>
+          <span class="date">July 26-28</span>
+          <span class="artist">Squamish Constelation Fest</span>
+          <span class="price">$65-$199</span>
+          <span class="likes">0</span>
+          <button id="button" onclick="liked(this.id)" class="upvote"><i class="material-icons">arrow_upward</i>
+          </button>
+        </li>
+        <li>
+          <span class="date">July 20</span>
+          <span class="artist">Cuco</span>
+          <span class="price">$37.70</span>
+          <span class="likes">0</span>
+          <button id="button" onclick="liked(this.id)" class="upvote"><i class="material-icons">arrow_upward</i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  <script>
+    $('#date').dateDropper({
+      format: 'd-F-Y',
+      lang: 'fr',
+    });
+  </script>
   </body>
 </html>
